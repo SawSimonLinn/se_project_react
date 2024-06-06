@@ -1,8 +1,12 @@
 @import url('../../index.css');
 
 .header {
-  display: flex;
   font-family: 'CabinetGrotesk-Bold';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+
+  display: flex;
   align-items: center;
   padding: 32px 0 28px;
 }
@@ -11,9 +15,6 @@
   width: 89px;
   height: 40px;
   margin-right: 24px;
-}
-
-.header__date-and-location {
 }
 
 .header__add-clothes-button {
@@ -30,4 +31,8 @@
 .header__user-avatar {
   width: 40px;
   height: 40px;
+}
+
+.header__username {
+  line-height: 25px;
 }
