@@ -1,7 +1,10 @@
 import './App.css';
+
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
+
 import { useState } from 'react';
 
 function App() {
@@ -9,13 +12,63 @@ function App() {
     type: 'cold',
   });
 
+  const [activeModal, setActiveModal] = useState('');
+
+  const handleAddClick = () => {
+    setActiveModal('add-garment');
+  };
+
+  const closeModal = () => {
+    setActiveModal('');
+  };
+
   return (
     <div className='page'>
       <div className='page__content'>
-        <Header />
+        <Header handleAddClick={handleAddClick} />
         <Main weatherData={weatherData} />
         <Footer />
       </div>
+
+      <ModalWithForm
+        title='New garment'
+        btnText='Add garment'
+        activeModal={activeModal}
+      >
+        <label htmlFor='name' className='modal__label'>
+          Name{''}
+          <input
+            type='text'
+            id='name'
+            className='modal__input'
+            placeholder='Name'
+          />
+        </label>
+        <label htmlFor='imgUrl' className='modal__label'>
+          Image{''}
+          <input
+            type='url'
+            id='imgUrl'
+            className='modal__input'
+            placeholder='Image URL'
+          />
+        </label>
+        <fieldset className='modal__radio-btns'>
+          <legend className='modal__legend'>Select the weather type:</legend>
+          <label htmlFor='hot' className='modal__radio'>
+            <input type='radio' value='hot' className=' modal__radio-input' />
+            Hot
+          </label>
+          <label htmlFor='warm' className='modal__radio'>
+            <input type='radio' value='warm' className=' modal__radio-input' />
+            Warm
+          </label>
+          <label htmlFor='cold' className='modal__radio'>
+            <input type='radio' value='cold' className=' modal__radio-input' />
+            Cold
+          </label>
+        </fieldset>
+      </ModalWithForm>
     </div>
   );
 }
