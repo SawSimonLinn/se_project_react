@@ -1,5 +1,5 @@
-import React from 'react';
 import './ItemModal.css';
+import closeIcon from '../../assets/close-icon.png';
 
 const ItemModal = ({ activeModal, onClose, card }) => {
   return (
@@ -9,8 +9,8 @@ const ItemModal = ({ activeModal, onClose, card }) => {
       }`}
     >
       <div className='modal__content modal__content_type-img'>
-        <button type='button' onClick={onClose} className='modal__close-btn'>
-          X
+        <button type='button' onClick={onClose}>
+          <img src={closeIcon} alt='Close' className='modal__close-btn' />
         </button>
         <img src={card.link} alt={card.name} className='modal__img' />
         <div className='modal__footer'>

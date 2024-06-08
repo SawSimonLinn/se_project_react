@@ -20,6 +20,8 @@
 
 .modal__close-btn {
   z-index: 2;
+  top: 24px;
+  right: 24px;
 }
 
 .modal__footer {

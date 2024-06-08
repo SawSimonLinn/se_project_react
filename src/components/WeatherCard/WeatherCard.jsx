@@ -3,14 +3,14 @@ import './WeatherCard.css';
 import { weatherOptions } from '../../utils/constants';
 
 const WeatherCard = ({ weatherData }) => {
-  const filterOptions = weatherOptions.filter(option => {
+  const filteredOptions = weatherOptions.filter(option => {
     return (
       option.day === weatherData.isDay &&
       option.condition === weatherData.condition
     );
   });
 
-  const weatherOption = filterOptions[0];
+  const weatherOption = filteredOptions[0];
 
   return (
     <section className='weather-card'>
