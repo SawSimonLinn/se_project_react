@@ -19,3 +19,14 @@
   padding: 0;
   margin: 0;
 }
+
+@media screen and (max-width: 580px) {
+  .card__list {
+    grid-template-columns: repeat(auto-fill, 164px);
+    grid-gap: 15px;
+  }
+
+  .card__text {
+    margin: 32px 0 20px;
+  }
+}

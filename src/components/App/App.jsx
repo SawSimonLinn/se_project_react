@@ -1,32 +1,53 @@
 import './App.css';
 
+import { coordinates, APIkey } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { getWeather, filterWeatherData } from '../../utils/weatherApi';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ItemModal from '../ItemModal/ItemModal';
 
 function App() {
   const [weatherData, setWeatherData] = useState({
-    type: 'cold',
+    type: '',
+    temp: { F: '', C: '0' },
+    city: '',
   });
 
-  const [activeModal, setActiveModal] = useState('');
+  const [activeModal, setActiveModal] = useState({});
+
+  const [selectedGarment, setSelectedGarment] = useState({});
+
+  const handleCardClick = card => {
+    setActiveModal('preview-garment');
+    setSelectedGarment(card);
+  };
 
   const handleAddClick = () => {
     setActiveModal('add-garment');
   };
 
-  const closeModal = () => {
+  const closeActiveModal = () => {
     setActiveModal('');
   };
+
+  useEffect(() => {
+    getWeather(coordinates, APIkey)
+      .then(data => {
+        const filteredData = filterWeatherData(data);
+        setWeatherData(filteredData);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div className='page'>
       <div className='page__content'>
-        <Header handleAddClick={handleAddClick} />
-        <Main weatherData={weatherData} />
+        <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
         <Footer />
       </div>
 
@@ -34,6 +55,7 @@ function App() {
         title='New garment'
         btnText='Add garment'
         activeModal={activeModal}
+        onClose={closeActiveModal}
       >
         <label htmlFor='name' className='modal__label'>
           Name{''}
@@ -69,6 +91,12 @@ function App() {
           </label>
         </fieldset>
       </ModalWithForm>
+
+      <ItemModal
+        activeModal={activeModal}
+        card={selectedGarment}
+        onClose={closeActiveModal}
+      />
     </div>
   );
 }

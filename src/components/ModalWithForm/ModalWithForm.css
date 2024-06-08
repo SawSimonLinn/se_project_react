@@ -18,7 +18,7 @@
   visibility: hidden;
 }
 
-.modal--opened {
+.modal__opened {
   visibility: visible;
 }
 
@@ -115,6 +115,11 @@
 
   .modal__legend {
     margin: 24px 0 12px 0;
+  }
+
+  .modal__close-btn {
+    top: 20px;
+    right: 21px;
   }
 
   .modal__submit-btn {

@@ -35,3 +35,10 @@
   width: 100%;
   cursor: pointer;
 }
+
+@media screen and (max-width: 580px) {
+  .card__list-item {
+    width: 164px;
+    height: 164px;
+  }
+}

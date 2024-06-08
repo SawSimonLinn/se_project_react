@@ -22,6 +22,10 @@
   border: none;
 }
 
+.header__date-and-location {
+  margin: 0;
+}
+
 .header__user-info {
   display: flex;
   align-items: center;
@@ -35,4 +39,25 @@
 
 .header__username {
   line-height: 25px;
+  margin: 0;
+}
+
+@media screen and (max-width: 580px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0 16px;
+    max-height: 822vh;
+  }
+
+  .header__date-and-location {
+    margin: 32px 0 0 0;
+  }
+
+  .header__add-clothes-button {
+    display: none;
+  }
+  .header__user-info {
+    display: none;
+  }
 }

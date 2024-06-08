@@ -1,10 +1,18 @@
 .page {
   background: #f3f3f3;
   height: 100%;
+  width: 100%;
 }
 
 .page__content {
   max-width: 1360px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+@media screen and (max-width: 580px) {
+  .page__content {
+    padding: 0 16px;
+  }
 }
