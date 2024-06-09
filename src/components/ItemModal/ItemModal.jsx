@@ -4,9 +4,7 @@ import closeIcon from '../../assets/close-icon.png';
 const ItemModal = ({ activeModal, onClose, card }) => {
   return (
     <div
-      className={`modal ${
-        activeModal === 'preview-garment' && 'modal__opened'
-      }`}
+      className={`modal ${activeModal === 'preview-garment' && 'modal_opened'}`}
     >
       <div className='modal__content modal__content_type-img'>
         <button type='button' onClick={onClose}>

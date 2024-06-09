@@ -10,7 +10,7 @@ const Header = ({ handleAddClick, weatherData }) => {
 
   return (
     <header className='header'>
-      <img className='header__logo' src={logo} alt='' />
+      <img className='header__logo' src={logo} alt='WTWR Logo' />
       <p className='header__date-and-location'>
         {currentDate}, {weatherData.city}
       </p>
