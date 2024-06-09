@@ -1,10 +1,10 @@
 import './App.css';
 
-import { coordinates, APIkey } from '../../utils/constants';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { coordinates, APIkey } from '../../utils/constants';
 import { getWeather, filterWeatherData } from '../../utils/weatherApi';
 
 import { useEffect, useState } from 'react';
