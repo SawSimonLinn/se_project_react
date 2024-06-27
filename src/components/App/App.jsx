@@ -18,7 +18,6 @@ function App() {
   });
 
   const [activeModal, setActiveModal] = useState('');
-
   const [selectedGarment, setSelectedGarment] = useState({});
 
   const handleCardClick = card => {
@@ -66,6 +65,7 @@ function App() {
             placeholder='Name'
           />
         </label>
+
         <label htmlFor='imgUrl' className='modal__label'>
           Image{''}
           <input
