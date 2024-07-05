@@ -97,8 +97,15 @@
   height: 36px;
   border: none;
   border-radius: 4px;
-  background: #0000004d;
+  background: #000000;
   color: #fff;
+
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.modal__submit-btn:hover {
+  background: #00000099;
 }
 
 @media screen and (max-width: 580px) {

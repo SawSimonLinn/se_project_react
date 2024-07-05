@@ -1,0 +1,22 @@
+@import url('../../index.css');
+
+.profile {
+  font-family: 'CabinetGrotesk-Bold';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+
+  display: flex;
+  gap: 70px;
+  margin: 22px 0 0 0;
+  justify-content: space-between;
+}
+
+.profile__sidebar {
+  width: 20%;
+}
+
+.profile__clothing-items {
+  margin: 16px 0 0 0;
+  width: 80%;
+}

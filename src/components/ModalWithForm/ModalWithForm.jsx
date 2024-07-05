@@ -1,7 +1,14 @@
 import './ModalWithForm.css';
 import closeIcon from '../../assets/close-icon.png';
 
-const ModalWithForm = ({ children, btnText, title, isOpen, onClose }) => {
+const ModalWithForm = ({
+  children,
+  btnText,
+  title,
+  isOpen,
+  onClose,
+  onSubmit,
+}) => {
   return (
     <div className={`modal ${isOpen ? 'modal_opened' : ''}`}>
       <div className='modal__content'>
@@ -9,7 +16,7 @@ const ModalWithForm = ({ children, btnText, title, isOpen, onClose }) => {
         <button type='button' onClick={onClose} className='modal__close-btn'>
           <img src={closeIcon} alt='Close' draggable='false' />
         </button>
-        <form className='modal__form'>
+        <form className='modal__form' onSubmit={onSubmit}>
           {children}
           <button type='submit' className='modal__submit-btn'>
             {btnText}

@@ -15,10 +15,17 @@ const ItemModal = ({ activeModal, onClose, card }) => {
             className='modal__close-btn'
           />
         </button>
-        <img src={card.link} alt={card.name} className='modal__img' />
+        <img src={card.imageUrl} alt={card.name} className='modal__img' />
         <div className='modal__footer'>
-          <h2 className='modal__text'>{card.name}</h2>
-          <p className='modal__weather'>Weather: {card.weather}</p>
+          <div className='modal__footer-label'>
+            <h2 className='modal__text'>{card.name}</h2>
+            <p className='modal__weather'>Weather: {card.weather}</p>
+          </div>
+          <div className='modal__footer-delete'>
+            <button type='button' className='modal__delete-btn'>
+              Delete item
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -26,9 +26,14 @@
 
 .modal__footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 180px;
 
   margin-top: 465px;
+}
+
+.modal__footer-label {
+  margin: 0 0 0 -12px;
 }
 
 .modal__text {
@@ -41,6 +46,20 @@
   font-size: 20px;
   line-height: 24px;
   margin: 0;
+}
+
+.modal__delete-btn {
+  padding: 0;
+  margin: 20px 0 0 0;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+
+  color: #ff4d00;
+  border: none;
+  background: transparent;
 }
 
 @media screen and (max-width: 580px) {
@@ -56,6 +75,7 @@
   }
 
   .modal__footer {
-    margin-top: 300px;
+    margin-top: 320px;
+    gap: 160px;
   }
 }

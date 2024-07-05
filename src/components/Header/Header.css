@@ -9,6 +9,17 @@
   display: flex;
   align-items: center;
   padding: 32px 0 28px;
+  justify-content: space-between;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
 }
 
 .header__logo {
@@ -18,12 +29,17 @@
 }
 
 .header__add-clothes-button {
-  margin: 0 20px 0 auto;
+  margin: 0 20px;
   border: none;
 }
 
 .header__date-and-location {
   margin: 0;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #000;
 }
 
 .header__user-info {

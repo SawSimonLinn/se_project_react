@@ -1,0 +1,31 @@
+@import url('../../index.css');
+
+.sidebar {
+  font-family: 'CabinetGrotesk-Bold';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar__user-avatar {
+  width: 56px;
+  height: 56px;
+}
+
+.sidebar__username {
+  margin: 16px 0 15px 16px;
+}
+
+@media screen and (max-width: 1292px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar__username {
+    margin: 16px 0 15px;
+  }
+}

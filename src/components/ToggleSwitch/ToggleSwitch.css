@@ -1,0 +1,56 @@
+@import url('../../index.css');
+
+.switch {
+  display: flex;
+  position: relative;
+}
+
+.switch__box {
+  border-radius: 25px;
+  border: 2px solid #7e7e7e;
+  width: 54px;
+  height: 28px;
+  /* outline: none; */
+  appearance: none;
+}
+
+.switch__slider {
+  position: absolute;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.switch__slider-F {
+}
+
+.switch__slider-C {
+  left: 26px;
+}
+
+.switch__temp-F {
+  font-size: 14px;
+  color: #7e7e7e;
+  position: absolute;
+  top: -11px;
+  left: 10px;
+}
+
+.switch__temp-C {
+  position: absolute;
+  top: -11px;
+  left: 35px;
+  font-size: 14px;
+  color: #7e7e7e;
+}
+
+.switch__active {
+  background-color: #000;
+  color: #fff;
+}
