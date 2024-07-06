@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/wtwr°.svg';
 import avatar from '../../assets/avatar.svg';
-import ToggleSwich from '../ToggleSwitch/ToggleSwitch';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
 const Header = ({ handleAddClick, weatherData }) => {
   const currentDate = new Date().toLocaleString('default', {
@@ -23,7 +23,7 @@ const Header = ({ handleAddClick, weatherData }) => {
       </div>
 
       <div className='header__right'>
-        <ToggleSwich />
+        <ToggleSwitch />
 
         <button
           onClick={handleAddClick}
