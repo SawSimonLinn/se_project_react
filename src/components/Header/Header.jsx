@@ -24,6 +24,7 @@ const Header = ({ handleAddClick, weatherData }) => {
 
       <div className='header__right'>
         <ToggleSwich />
+
         <button
           onClick={handleAddClick}
           type='button'
