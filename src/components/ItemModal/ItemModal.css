@@ -25,9 +25,11 @@
 }
 
 .modal__footer {
+  width: 431px;
   display: flex;
   flex-direction: row;
-  gap: 180px;
+  justify-content: space-between;
+  gap: 100px;
 
   margin-top: 465px;
 }

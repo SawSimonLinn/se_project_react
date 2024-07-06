@@ -1,7 +1,7 @@
 import './ItemModal.css';
 import closeIcon from '../../assets/close-icon.png';
 
-const ItemModal = ({ activeModal, onClose, card }) => {
+const ItemModal = ({ activeModal, onClose, card, openDeleteConfirmModal }) => {
   return (
     <div
       className={`modal ${activeModal === 'preview-garment' && 'modal_opened'}`}
@@ -22,7 +22,11 @@ const ItemModal = ({ activeModal, onClose, card }) => {
             <p className='modal__weather'>Weather: {card.weather}</p>
           </div>
           <div className='modal__footer-delete'>
-            <button type='button' className='modal__delete-btn'>
+            <button
+              type='button'
+              className='modal__delete-btn'
+              onClick={() => openDeleteConfirmModal(card)}
+            >
               Delete item
             </button>
           </div>
