@@ -7,6 +7,27 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Overview
+
+This project is a React application built using Vite. It leverages modern React features such as hooks and context to create a dynamic and responsive user interface. The project also includes a JSON server for handling mock API requests.
+
+## Figma File
+
+You can find the design layout for this project in the following Figma file:
+[Project Design on Figma](your-figma-file-link)
+
+## React Features Used
+
+This project utilizes several React features, including but not limited to:
+
+- **React Hooks**
+  - `useEffect`
+  - `useState`
+  - `useContext`
+  - `useReducer`
+- **Contexts**
+  - Context API for state management
+
 ## Setting Up JSON Server
 
 To use a JSON server for your project, follow these steps:
