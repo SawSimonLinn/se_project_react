@@ -14,8 +14,8 @@ This project is a React application built using Vite. It leverages modern React 
 ## Figma File
 
 You can find the design layout for this project in the following Figma file:
-[Project Design on Figma 1](https://www.figma.com/design/JELwiE1GnlYDgJTcphpJOH/Sprint-11%3A-WTWR?node-id=311-433&t=GrK1sNfUyyYSi7hW-0)
-[Project Design on Figma 2](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&t=b4cYtCWdvm2csvLg-0)
+
+Project Design on [Figma 1](https://www.figma.com/design/JELwiE1GnlYDgJTcphpJOH/Sprint-11%3A-WTWR?node-id=311-433&t=GrK1sNfUyyYSi7hW-0) [Figma 2](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&t=b4cYtCWdvm2csvLg-0)
 
 ## React Features Used
 
