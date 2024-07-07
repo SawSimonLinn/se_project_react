@@ -19,8 +19,18 @@ Install the `json-server` package globally using npm. Note that on some systems,
 npm install -g json-server@^0
 ```
 
-# or with sudo if necessary
+or with sudo if necessary
 
 ```bash
 sudo npm install -g json-server@^0
+```
+
+## Running JSON Server
+
+In the first terminal, you can now run your React app.
+
+In the second terminal, start the JSON server with the following command:
+
+```bash
+json-server --watch db.json --id _id --port 3001
 ```
