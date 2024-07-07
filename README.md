@@ -17,6 +17,10 @@ Install the `json-server` package globally using npm. Note that on some systems,
 
 ```bash
 npm install -g json-server@^0
+```
+
 # or with sudo if necessary
+
+```bash
 sudo npm install -g json-server@^0
 ```
