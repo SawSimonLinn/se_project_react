@@ -1,14 +1,14 @@
 const baseUrl = 'http://localhost:3001';
 
-const checkResponse = res => {
+export const checkResponse = res => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-const getItems = () => {
+export const getItems = () => {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 };
 
-const deleteItem = id => {
+export const deleteItem = id => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: 'DELETE',
     headers: {
@@ -17,7 +17,7 @@ const deleteItem = id => {
   }).then(checkResponse);
 };
 
-const addItem = item => {
+export const addItem = item => {
   return fetch(`${baseUrl}/items`, {
     method: 'POST',
     headers: {
@@ -26,7 +26,3 @@ const addItem = item => {
     body: JSON.stringify(item),
   }).then(checkResponse);
 };
-
-export { getItems };
-export { deleteItem };
-export { addItem };

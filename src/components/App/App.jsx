@@ -43,9 +43,7 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    currentTemperatureUnit === 'C'
-      ? setCurrentTemperatureUnit('F')
-      : setCurrentTemperatureUnit('C');
+    setCurrentTemperatureUnit(currentTemperatureUnit === 'F' ? 'C' : 'F');
   };
 
   const openDeleteConfirmModal = card => {
@@ -64,10 +62,11 @@ function App() {
       .catch(console.error);
   };
 
-  const onAddItem = async values => {
+  const onAddItem = async (values, onDone) => {
     try {
       const newItem = await addItem(values);
-      setClothingItems(prevItems => [...prevItems, newItem]);
+      setClothingItems(prevItems => [newItem, ...prevItems]);
+      onDone();
     } catch (error) {
       console.error(error);
     }

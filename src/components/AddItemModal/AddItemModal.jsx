@@ -7,6 +7,10 @@ const AddItemModal = ({ activeModal, onClose, onAddItem }) => {
   const [imageUrl, setUrl] = useState('');
   const [weather, setWeatherType] = useState('hot');
 
+  const formIsValid = () => {
+    return name !== '' && imageUrl !== '' && weather !== '';
+  };
+
   const handleNameChange = e => {
     console.log(e.target.value);
     setName(e.target.value);
@@ -24,10 +28,16 @@ const AddItemModal = ({ activeModal, onClose, onAddItem }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onAddItem({ name, imageUrl, weather });
-    onClose();
-  };
 
+    if (formIsValid()) {
+      onAddItem({ name, imageUrl, weather }, () => {
+        setName('');
+        setUrl('');
+        setWeatherType('hot');
+        onClose();
+      });
+    }
+  };
   return (
     <ModalWithForm
       title='New garment'

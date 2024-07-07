@@ -5,14 +5,13 @@ import { weatherOptions } from '../../utils/constants';
 import { CurrentTemperatureUnitContext } from '../../contexts/CurrentTemperatureUnitContext';
 
 const WeatherCard = ({ weatherData }) => {
-  const filteredOptions = weatherOptions.filter(option => {
+  const weatherOption = weatherOptions.find(option => {
     return (
       option.day === weatherData.isDay &&
       option.condition === weatherData.condition
     );
   });
 
-  const weatherOption = filteredOptions[0];
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
