@@ -64,22 +64,60 @@
   margin: 0;
 }
 
-@media screen and (max-width: 580px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 0 16px;
-    max-height: 822vh;
+/* Hamburger Menu Styles */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.header__hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 3px 0;
+}
+
+.header__menu {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header__right {
+    display: none;
   }
 
-  .header__date-and-location {
-    margin: 32px 0 0 0;
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__menu {
+    display: flex;
+    flex-direction: column-reverse;
+
+    box-shadow: 0px 2px 8px 0px #0000001a;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 18px;
+    right: 16px;
+
+    max-width: 343px;
+
+    padding: 60px 67px;
+    background: #ffffff;
+    align-items: center;
+    z-index: 1;
   }
 
   .header__add-clothes-button {
-    display: none;
+    margin: 24px 0 24px 0;
+    background: transparent;
   }
+
   .header__user-info {
-    display: none;
+    flex-direction: row;
   }
 }

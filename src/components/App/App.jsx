@@ -112,7 +112,7 @@ function App() {
               }
             />
             <Route
-              path='/profile'
+              path='/se_project_react/profile'
               element={
                 <Profile
                   handleAddClick={handleAddClick}
