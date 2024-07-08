@@ -48,38 +48,38 @@ This project is built using React for the front end. It leverages modern React f
 
 2. Install the dependencies:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. Install JSON Server globally if you haven't already:
 
-```bash
-npm install -g json-server@^0
-# or with sudo if necessary
-sudo npm install -g json-server@^0
-```
+   ```bash
+   npm install -g json-server@^0
+   # or with sudo if necessary
+   sudo npm install -g json-server@^0
+   ```
 
-### Running the Project
+## Running the Project
 
 1.  Start the React application:
 
-```bash
-npm run dev
-```
+    ```bash
+    npm run dev
+    ```
 
-2. In another terminal, start the JSON Server:
+2.  In another terminal, start the JSON Server:
 
-```bash
-json-server --watch db.json --id _id --port 3001
-```
+    ```bash
+    json-server --watch db.json --id _id --port 3001
+    ```
 
-### Configuration
+## Configuration
 
 - Ensure you have a db.json file in the root directory of your project to mock API responses.
 - Configure your API keys and endpoints in a .env file.
 
-### Project Structure
+## Project Structure
 
 - `src/`: Contains all the source code for the React application.
   - `components/` : Reusable React components.
@@ -89,14 +89,14 @@ json-server --watch db.json --id _id --port 3001
   - `services/`: API service files.
   - `styles/`: CSS files and styling.
 
-### Figma Design
+## Figma Design
 
 You can find the design layout for this project in the following Figma file: [Project Design on Figma](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&t=b4cYtCWdvm2csvLg-0)
 
-### Contributing
+## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
 
-### License
+## License
 
 This project is licensed under the MIT License.
