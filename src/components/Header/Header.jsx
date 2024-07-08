@@ -7,7 +7,7 @@ import logo from '../../assets/wtwr°.svg';
 import avatar from '../../assets/avatar.svg';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
-const Header = ({ handleAddClick, weatherData, onClose }) => {
+const Header = ({ handleAddClick, weatherData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
