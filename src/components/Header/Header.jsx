@@ -14,7 +14,7 @@ const Header = ({ handleAddClick, weatherData }) => {
   return (
     <header className='header'>
       <div className='header__left'>
-        <Link to='/'>
+        <Link to='/se_project_react'>
           <img className='header__logo' src={logo} alt='WTWR Logo' />
         </Link>
         <p className='header__date-and-location'>
