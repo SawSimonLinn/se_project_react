@@ -7,52 +7,96 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Overview
+# WTWR (What to Wear)
 
-This project is a React application built using Vite. It leverages modern React features such as hooks and context to create a dynamic and responsive user interface. The project also includes a JSON server for handling mock API requests.
+WTWR (What to Wear) is a web application designed to help users decide what to wear based on the weather. The application fetches weather data from an external API and suggests appropriate clothing items from the user's wardrobe.
 
-## Figma File
+## Project Overview
 
-You can find the design layout for this project in the following Figma file:
-[Project Design on Figma 1](https://www.figma.com/design/JELwiE1GnlYDgJTcphpJOH/Sprint-11%3A-WTWR?node-id=311-433&t=GrK1sNfUyyYSi7hW-0)
-[Project Design on Figma 2](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&t=b4cYtCWdvm2csvLg-0)
+This project is built using React for the front end. It leverages modern React features such as hooks and context to create a dynamic and responsive user interface. The application interacts with a backend server to manage user data and preferences.
 
-## React Features Used
+## Key Features
 
-This project utilizes several React features, including but not limited to:
+- **Weather Data Integration:** Fetches real-time weather data to provide accurate clothing suggestions.
+- **User Authentication:** Secure user login and registration functionality.
+- **Personalized Wardrobe:** Users can add, update, and delete clothing items in their wardrobe.
+- **React Hooks:** Utilizes `useState`, `useEffect`, `useContext`, and more.
+- **Responsive Design:** Ensures the application works well on various screen sizes.
 
-- **React Hooks**
-  - `useEffect`
-  - `useState`
-  - `useContext`
-  - `useReducer`
-- **Contexts**
-  - Context API for state management
+## Technologies Used
 
-## Setting Up JSON Server
+- **Front-end:** React, React Hooks, Context API, CSS
+- **Back-end:** Node.js, Express (to be implemented)
+- **Database:** MongoDB (to be implemented)
+- **API:** OpenWeatherMap API for weather data
+- **Tools:** Vite, JSON Server for mock API
 
-To use a JSON server for your project, follow these steps:
+## Setting Up the Project
 
-### Install JSON Server
+### Prerequisites
 
-Install the `json-server` package globally using npm. Note that on some systems, you may have to preface this command with `sudo` to run it with elevated permissions.
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/SawSimonLinn/se_project_react
+   cd se_project_react
+   ```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Install JSON Server globally if you haven't already:
 
 ```bash
 npm install -g json-server@^0
-```
-
-or with sudo if necessary
-
-```bash
+# or with sudo if necessary
 sudo npm install -g json-server@^0
 ```
 
-## Running JSON Server
+### Running the Project
 
-In the first terminal, you can now run your React app.
+1.  Start the React application:
 
-In the second terminal, start the JSON server with the following command:
+```bash
+npm run dev
+```
+
+2. In another terminal, start the JSON Server:
 
 ```bash
 json-server --watch db.json --id _id --port 3001
 ```
+
+### Configuration
+
+- Ensure you have a db.json file in the root directory of your project to mock API responses.
+- Configure your API keys and endpoints in a .env file.
+
+### Project Structure
+
+- `src/`: Contains all the source code for the React application.
+  - `components/` : Reusable React components.
+  - `contexts/`: Context API files for state management.
+  - `hooks/`: Custom hooks used in the project.
+  - `pages/`: Page components for different routes.
+  - `services/`: API service files.
+  - `styles/`: CSS files and styling.
+
+### Figma Design
+
+You can find the design layout for this project in the following Figma file: [Project Design on Figma](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&t=b4cYtCWdvm2csvLg-0)
+
+### Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
+
+### License
+
+This project is licensed under the MIT License.
