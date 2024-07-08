@@ -89,8 +89,21 @@
     display: none;
   }
 
+  .header__left {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .header__date-and-location {
+    margin: 49px 0 0;
+  }
+
   .header__hamburger {
     display: flex;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
   }
 
   .header__menu {
