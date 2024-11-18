@@ -7,7 +7,7 @@ export const APIkey = '035a112474478a3b64beab9f42f2aa0c';
 
 export const baseUrl =
   process.env.NODE_ENV === 'production'
-    ? 'https://api.what-to-wear.happyforever.com'
+    ? 'https://api.wtwr.wtwr.com'
     : 'http://localhost:3001';
 
 export const weatherOptions = [

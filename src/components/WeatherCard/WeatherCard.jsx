@@ -15,7 +15,6 @@ const WeatherCard = ({ weatherData }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
-  console.log(weatherData);
   return (
     <section className='weather-card'>
       <p className='weather-card__temp'>{temp} &deg; F</p>
