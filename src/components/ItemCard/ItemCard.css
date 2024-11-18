@@ -15,9 +15,14 @@
   overflow: hidden;
 }
 
-.card__title {
-  position: absolute;
+.card__header {
   top: 15px;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+}
+
+.card__title {
   padding: 2px 12px;
   margin: 0;
 
@@ -29,6 +34,31 @@
   line-height: 20px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.card__like-button,
+.card__like-button-active {
+  width: 20px;
+  height: 17px;
+  margin: 3px 0 0 0;
+
+  border: none;
+  background: transparent;
+}
+
+.card__like-button {
+  background-image: url('../../assets/like-button.png');
+}
+
+.card__like-button-active {
+  background-image: url('../../assets/active-like-btn.png');
+}
+
+.card__like-button:hover,
+.card__like-button-active:hover {
+  transition: all 0.3s;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .card__image {

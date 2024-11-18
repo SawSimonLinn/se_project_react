@@ -2,8 +2,13 @@ import './DeleteConfirmModal.css';
 import closeIcon from '../../assets/close-icon.png';
 import useOutsideAlerter from '../../useOutsideAlerter/useOutsideAlerter';
 
-const DeleteConfirmModal = ({ handleDeleteCard, onClose, isOpen, card }) => {
+const DeleteConfirmModal = ({ onDelete, onClose, isOpen, card }) => {
   const componentRef = useOutsideAlerter(onClose);
+
+  const handleClick = () => {
+    onDelete(card);
+    onClose();
+  };
 
   return (
     <div className={`delete-modal ${isOpen ? 'delete-modal_opened' : ''}`}>
@@ -21,10 +26,7 @@ const DeleteConfirmModal = ({ handleDeleteCard, onClose, isOpen, card }) => {
         </h2>
         <button
           className='delete-modal__confirm-btn delete-modal__btn'
-          onClick={() => {
-            handleDeleteCard(card);
-            onClose();
-          }}
+          onClick={handleClick}
         >
           Yes, delete item
         </button>

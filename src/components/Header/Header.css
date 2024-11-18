@@ -55,6 +55,9 @@
 }
 
 .header__user-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px;
   width: 40px;
   height: 40px;
 }
@@ -62,6 +65,21 @@
 .header__username {
   line-height: 25px;
   margin: 0;
+}
+
+.header__registration-button {
+  background: none;
+  font-size: 20px;
+  line-height: 24px;
+
+  margin: 0 0 0 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.header__registration-button:hover {
+  color: #00000099;
+  transition: all 0.1s linear;
 }
 
 /* Hamburger Menu Styles */

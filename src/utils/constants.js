@@ -1,3 +1,15 @@
+export const coordinates = {
+  latitude: 34.143559,
+  longitude: -118.395248,
+};
+
+export const APIkey = '035a112474478a3b64beab9f42f2aa0c';
+
+export const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://api.what-to-wear.happyforever.com'
+    : 'http://localhost:3001';
+
 export const weatherOptions = [
   {
     day: true,
@@ -60,10 +72,3 @@ export const weatherOptions = [
     url: new URL('../assets/night/storm-night.png', import.meta.url).href,
   },
 ];
-
-export const coordinates = {
-  latitude: 34.143559,
-  longitude: -118.395248,
-};
-
-export const APIkey = '035a112474478a3b64beab9f42f2aa0c';

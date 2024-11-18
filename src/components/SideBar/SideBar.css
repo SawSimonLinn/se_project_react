@@ -11,12 +11,42 @@
 }
 
 .sidebar__user-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px;
   width: 56px;
   height: 56px;
 }
 
 .sidebar__username {
   margin: 16px 0 15px 16px;
+}
+
+.sidebar__button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar__data_change {
+  border: none;
+  margin: 24px 0 0 0;
+  background: none;
+  padding: 0;
+}
+
+.sidebar__logout {
+  border: none;
+  margin: 8px 0 0 0;
+  background: none;
+  padding: 0;
+}
+
+.sidebar__data_change:hover,
+.sidebar__logout:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.1s linear;
 }
 
 @media screen and (max-width: 1292px) {

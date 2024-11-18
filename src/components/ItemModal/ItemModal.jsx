@@ -15,7 +15,12 @@ const ItemModal = ({ activeModal, onClose, card, openDeleteConfirmModal }) => {
             className='modal__close-btn'
           />
         </button>
-        <img src={card.imageUrl} alt={card.name} className='modal__img' />
+        <img
+          className='modal__img'
+          draggable='false'
+          src={card.imageUrl}
+          alt={card.name}
+        />
         <div className='modal__footer'>
           <div className='modal__footer-label'>
             <h2 className='modal__text'>{card.name}</h2>

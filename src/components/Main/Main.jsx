@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
+import './Main.css';
+
 import WeatherCard from '../WeatherCard/WeatherCard';
 import { CurrentTemperatureUnitContext } from '../../contexts/CurrentTemperatureUnitContext';
 
-import './Main.css';
 import ItemCard from '../ItemCard/ItemCard';
 
-const Main = ({ weatherData, handleCardClick, clothingItems }) => {
+const Main = ({
+  weatherData,
+  handleCardClick,
+  clothingItems,
+  onCardLike,
+  isAuthenticated,
+}) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
@@ -16,7 +23,6 @@ const Main = ({ weatherData, handleCardClick, clothingItems }) => {
         <p className='card__text'>
           Today is {temp}&deg; F / You may want to wear:
         </p>
-
         <ul className='card__list'>
           {clothingItems
             .filter(item => {
@@ -28,6 +34,8 @@ const Main = ({ weatherData, handleCardClick, clothingItems }) => {
                   key={item._id}
                   item={item}
                   onCardClick={handleCardClick}
+                  onCardLike={onCardLike}
+                  isAuthenticated={isAuthenticated}
                 />
               );
             })}
