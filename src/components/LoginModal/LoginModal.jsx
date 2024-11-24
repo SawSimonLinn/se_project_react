@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { useForm } from '../../hooks/useForm';
 
-function LogInModal({ isOpen, onClose, onLogin, handleSignupClick }) {
-  const [formData, setFormData] = useState({
+function LogInModal({ isOpen, onClose, onLogin, handleSignupClick, btnText }) {
+  const { values, handleChange, setValues } = useForm({
     email: '',
     password: '',
   });
 
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const clearForm = () => {
-    setFormData({ email: '', password: '' });
-  };
+  useEffect(() => {
+    if (isOpen) {
+      setValues({ email: '', password: '' });
+    }
+  }, [isOpen, setValues]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    onLogin(formData);
-    clearForm();
+    Promise.resolve(onLogin(values))
+      .then(() => {
+        setValues({ email: '', password: '' });
+        onClose();
+      })
+      .catch(console.error);
   };
 
-  const isFormValid = formData.email && formData.password;
+  const isFormValid = values.email && values.password;
 
   return (
     <ModalWithForm
       title='Log In'
-      btnText='Log In'
+      btnText={btnText}
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
@@ -38,31 +37,34 @@ function LogInModal({ isOpen, onClose, onLogin, handleSignupClick }) {
       onSecondaryBtnClick={handleSignupClick}
       isSubmitDisabled={!isFormValid}
     >
-      <label htmlFor='email' className='modal__label'>
+      <label htmlFor='login-email' className='modal__label'>
         Email
         <input
           type='text'
           className='modal__input'
-          id='Email'
+          id='login-email'
           placeholder='Email'
           name='email'
-          value={formData.email}
+          value={values.email}
           onChange={handleChange}
+          autoComplete='email'
         />
       </label>
-      <label htmlFor='password' className='modal__label'>
+      <label htmlFor='login-password' className='modal__label'>
         Password
         <input
-          type='text'
+          type='password'
           className='modal__input'
-          id='Password'
+          id='login-password'
           placeholder='Password'
           name='password'
-          value={formData.password}
+          value={values.password}
           onChange={handleChange}
+          autoComplete='current-password'
         />
       </label>
     </ModalWithForm>
   );
 }
+
 export default LogInModal;

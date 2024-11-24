@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
+function RegisterModal({
+  isOpen,
+  onClose,
+  onSignup,
+  handleLoginClick,
+  btnText,
+}) {
   const [values, setFormData] = useState({
     email: '',
     password: '',
     name: '',
     avatarUrl: '',
   });
+
+  useEffect(() => {
+    if (isOpen) {
+      setFormData({ email: '', password: '', name: '', avatarUrl: '' });
+    }
+  }, [isOpen]);
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -16,15 +28,14 @@ function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
       [name]: value,
     }));
   };
-
-  const clearForm = () => {
-    setFormData({ email: '', password: '', name: '', avatarUrl: '' });
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
-    onSignup(values);
-    clearForm();
+    Promise.resolve(onSignup(values))
+      .then(() => {
+        setFormData({ email: '', password: '', name: '', avatarUrl: '' });
+        onClose();
+      })
+      .catch(console.error);
   };
 
   const isFormValid =
@@ -33,7 +44,7 @@ function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
   return (
     <ModalWithForm
       title='Sign up'
-      btnText='Sign up'
+      btnText={btnText}
       btnLoginText='Or Log in'
       onClose={onClose}
       isOpen={isOpen}
@@ -52,6 +63,7 @@ function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
           name='email'
           value={values.email}
           onChange={handleChange}
+          autoComplete='email'
         />
       </label>
       <label htmlFor='password' className='modal__label'>
@@ -64,6 +76,7 @@ function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
           name='password'
           value={values.password}
           onChange={handleChange}
+          autoComplete='current-password'
         />
       </label>
       <label htmlFor='name' className='modal__label'>
@@ -76,6 +89,7 @@ function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
           name='name'
           value={values.name}
           onChange={handleChange}
+          autoComplete='name'
         />
       </label>
       <label htmlFor='imageUrl' className='modal__label'>
@@ -88,20 +102,9 @@ function RegisterModal({ isOpen, onClose, onSignup, handleLoginClick }) {
           name='avatarUrl'
           value={values.avatarUrl}
           onChange={handleChange}
+          autoComplete='url'
         />
       </label>
-      {/* <div className='modal__button_container'>
-        <button type='submit' className='modal__add_submit'>
-          Sign up
-        </button>
-        <button
-          type='submit'
-          className='modal__login_submit '
-          onClick={handleLoginClick}
-        >
-          Or Log in
-        </button>
-      </div> */}
     </ModalWithForm>
   );
 }

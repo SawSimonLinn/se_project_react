@@ -21,7 +21,7 @@ const Main = ({
       <WeatherCard weatherData={weatherData} />
       <section className='card'>
         <p className='card__text'>
-          Today is {temp}&deg; F / You may want to wear:
+          Today is {temp} &deg; {currentTemperatureUnit} / You may want to wear:
         </p>
         <ul className='card__list'>
           {clothingItems

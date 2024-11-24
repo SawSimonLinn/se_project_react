@@ -24,22 +24,20 @@ const Profile = ({
   };
 
   return (
-    <>
-      <div className='profile'>
-        <div className='profile__sidebar'>
-          <SideBar onDataChange={handleDataChange} onLogout={handleLogout} />
-        </div>
-        <div className='profile__clothing-items'>
-          <ClothesSection
-            handleAddClick={handleAddClick}
-            handleCardClick={handleCardClick}
-            clothingItems={clothingItems}
-            onCardLike={onCardLike}
-            isAuthenticated={isAuthenticated}
-          />
-        </div>
+    <div className='profile'>
+      <div className='profile__sidebar'>
+        <SideBar onDataChange={handleDataChange} onLogout={handleLogout} />
       </div>
-    </>
+      <div className='profile__clothing-items'>
+        <ClothesSection
+          handleAddClick={handleAddClick}
+          handleCardClick={handleCardClick}
+          clothingItems={clothingItems}
+          onCardLike={onCardLike}
+          isAuthenticated={isAuthenticated}
+        />
+      </div>
+    </div>
   );
 };
 

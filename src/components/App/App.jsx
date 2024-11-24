@@ -1,8 +1,8 @@
 import './App.css';
 
 // React
-import { useEffect, useState } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 // Components
 import Header from '../Header/Header';
@@ -50,11 +50,12 @@ function App() {
     _id: '',
   });
 
-  const [activeModal, setActiveModal] = useState('');
-  const [selectedGarment, setSelectedGarment] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
+  const [selectedGarment, setSelectedGarment] = useState({});
+  const [isLoading, setIsLoading] = React.useState(false);
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [activeModal, setActiveModal] = useState('');
 
   // Functions
   const closeActiveModal = () => {
@@ -93,12 +94,14 @@ function App() {
 
   const handleAddItemModalSubmit = values => {
     const token = localStorage.getItem('jwt');
+    setIsLoading(true);
     return addItem(values, token)
       .then(item => {
         setClothingItems([item, ...clothingItems]);
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   };
 
   const handleDeleteCard = card => {
@@ -142,6 +145,7 @@ function App() {
 
   const handleRegisterModalSubmit = ({ name, email, password, avatarUrl }) => {
     const token = localStorage.getItem('jwt');
+    setIsLoading(true);
     signup({ name, avatarUrl, email, password }, token)
       .then(() => {
         handleSignin({ name, avatarUrl, email, password });
@@ -151,10 +155,12 @@ function App() {
       .catch(error => {
         console.error(error, 'Failed to sign up');
         alert('Failed to sign up');
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleSignin = ({ email, password }) => {
+    setIsLoading(true);
     signin(email, password)
       .then(res => {
         localStorage.setItem('jwt', res.token);
@@ -165,9 +171,8 @@ function App() {
           closeActiveModal();
         });
       })
-      .catch(err => {
-        console.error('Can not log in', err);
-      });
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   };
 
   const handleLogOut = () => {
@@ -265,6 +270,7 @@ function App() {
             isOpen={activeModal === 'add-garment'}
             onClose={closeActiveModal}
             onAddItem={handleAddItemModalSubmit}
+            btnText={isLoading ? 'Saving...' : 'Add garment'}
           />
 
           <RegisterModal
@@ -272,6 +278,7 @@ function App() {
             onClose={closeActiveModal}
             onSignup={handleRegisterModalSubmit}
             handleLoginClick={handleLogInClick}
+            btnText={isLoading ? 'Saving...' : 'Sign up'}
           />
 
           <LogInModal
@@ -279,6 +286,7 @@ function App() {
             onClose={closeActiveModal}
             onLogin={handleSignin}
             handleSignupClick={handleSignupClick}
+            btnText={isLoading ? 'Loggin' : 'Log In'}
           />
 
           <EditProfileModal

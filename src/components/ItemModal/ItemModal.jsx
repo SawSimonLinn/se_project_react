@@ -1,5 +1,5 @@
 import './ItemModal.css';
-import closeIcon from '../../assets/close-icon.png';
+import closeIconWhite from '../../assets/close-icon-white.png';
 
 const ItemModal = ({ activeModal, onClose, card, openDeleteConfirmModal }) => {
   return (
@@ -9,7 +9,7 @@ const ItemModal = ({ activeModal, onClose, card, openDeleteConfirmModal }) => {
       <div className='modal__content modal__content_type-img'>
         <button type='button' onClick={onClose}>
           <img
-            src={closeIcon}
+            src={closeIconWhite}
             alt='Close'
             draggable='false'
             className='modal__close-btn'

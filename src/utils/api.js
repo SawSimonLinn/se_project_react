@@ -1,6 +1,5 @@
 const baseUrl = 'http://localhost:3001';
 
-//
 export const checkResponse = res => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
@@ -13,6 +12,7 @@ export const getHeaders = token => {
   return headers;
 };
 
+// ? Path: se_project_react/src/utils/api.js
 export const getItems = () => {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 };
@@ -26,17 +26,12 @@ export const getCurrentUser = token => {
 };
 
 export const deleteItemById = (id, token) => {
-  return fetch(`http://localhost:3001/items/${id}`, {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  }).then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-    return response.json();
-  });
+  }).then(checkResponse);
 };
 
 export const addItem = ({ name, weather, imageUrl }, token) => {

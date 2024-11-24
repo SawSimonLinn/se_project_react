@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import './AddItemModal.css';
 
-const AddItemModal = ({ onClose, onAddItem, isOpen }) => {
+const AddItemModal = ({ onClose, onAddItem, isOpen, btnText }) => {
   const [values, setValues] = useState({ name: '', imageUrl: '', weather: '' });
+
+  useEffect(() => {
+    if (isOpen) {
+      clearForm();
+    }
+  }, [isOpen]);
 
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -15,8 +21,16 @@ const AddItemModal = ({ onClose, onAddItem, isOpen }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onAddItem(values);
-    clearForm();
+    onAddItem(values)
+      .then(() => {
+        clearForm();
+        setTimeout(() => {
+          onClose();
+        }, 1000); // 1 second delay before closing the modal
+      })
+      .catch(error => {
+        console.error('Error adding item:', error);
+      });
   };
 
   const isFormValid = values.name && values.imageUrl && values.weather;
@@ -24,14 +38,14 @@ const AddItemModal = ({ onClose, onAddItem, isOpen }) => {
   return (
     <ModalWithForm
       title='New garment'
-      btnText='Add garment'
+      btnText={btnText}
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
       isSubmitDisabled={!isFormValid}
     >
       <label htmlFor='name' className='modal__label'>
-        Name{''}
+        Name
         <input
           type='text'
           id='name'
@@ -40,19 +54,20 @@ const AddItemModal = ({ onClose, onAddItem, isOpen }) => {
           placeholder='Name'
           value={values.name}
           onChange={handleChange}
+          autoComplete='name'
         />
       </label>
-
-      <label htmlFor='imageUrl' className='modal__label'>
-        Image{''}
+      <label htmlFor='imageUrl1' className='modal__label'>
+        Image URL
         <input
           type='url'
-          id='imageUrl'
+          id='imageUrl1'
           className='modal__input'
           name='imageUrl'
           placeholder='Image URL'
           value={values.imageUrl}
           onChange={handleChange}
+          autoComplete='url'
         />
       </label>
       <fieldset className='modal__radio-btns'>

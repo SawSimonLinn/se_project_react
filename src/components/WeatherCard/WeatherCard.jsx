@@ -17,7 +17,9 @@ const WeatherCard = ({ weatherData }) => {
 
   return (
     <section className='weather-card'>
-      <p className='weather-card__temp'>{temp} &deg; F</p>
+      <p className='weather-card__temp'>
+        {temp} &deg; {currentTemperatureUnit}{' '}
+      </p>
       <img
         src={weatherOption?.url}
         alt={`Card showing ${weatherOption?.isDay ? 'day ' : 'night '}time ${
