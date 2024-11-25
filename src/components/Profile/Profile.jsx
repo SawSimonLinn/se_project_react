@@ -15,12 +15,10 @@ const Profile = ({
 }) => {
   const handleDataChange = () => {
     handleProfileChangeClick();
-    console.log('Data change button clicked');
   };
 
   const handleLogout = () => {
     handleLogOut();
-    console.log('Logout button clicked');
   };
 
   return (

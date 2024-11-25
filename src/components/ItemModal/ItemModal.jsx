@@ -1,11 +1,13 @@
-import './ItemModal.css';
+import React, { useContext } from 'react';
 import closeIconWhite from '../../assets/close-icon-white.png';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
+import './ItemModal.css';
 
-const ItemModal = ({ activeModal, onClose, card, openDeleteConfirmModal }) => {
+const ItemModal = ({ isOpen, onClose, card, onDelete }) => {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
-    <div
-      className={`modal ${activeModal === 'preview-garment' && 'modal_opened'}`}
-    >
+    <div className={`modal ${isOpen === 'preview-garment' && 'modal_opened'}`}>
       <div className='modal__content modal__content_type-img'>
         <button type='button' onClick={onClose}>
           <img
@@ -26,15 +28,17 @@ const ItemModal = ({ activeModal, onClose, card, openDeleteConfirmModal }) => {
             <h2 className='modal__text'>{card.name}</h2>
             <p className='modal__weather'>Weather: {card.weather}</p>
           </div>
-          <div className='modal__footer-delete'>
-            <button
-              type='button'
-              className='modal__delete-btn'
-              onClick={() => openDeleteConfirmModal(card)}
-            >
-              Delete item
-            </button>
-          </div>
+          {currentUser && currentUser._id === card.owner && (
+            <div className='modal__footer-delete'>
+              <button
+                type='button'
+                className='modal__delete-btn'
+                onClick={() => onDelete(card)}
+              >
+                Delete item
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

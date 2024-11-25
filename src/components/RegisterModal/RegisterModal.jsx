@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function RegisterModal({
-  isOpen,
-  onClose,
-  onSignup,
-  handleLoginClick,
-  btnText,
-}) {
+function RegisterModal({ isOpen, onClose, onSignup, onClick, btnText }) {
   const [values, setFormData] = useState({
     email: '',
     password: '',
@@ -50,7 +44,7 @@ function RegisterModal({
       isOpen={isOpen}
       onSubmit={handleSubmit}
       secondaryBtnText='or Log In'
-      onSecondaryBtnClick={handleLoginClick}
+      onSecondaryBtnClick={onClick}
       isSubmitDisabled={!isFormValid}
     >
       <label htmlFor='email' className=' modal__label'>

@@ -277,7 +277,7 @@ function App() {
             isOpen={activeModal === 'sign-up'}
             onClose={closeActiveModal}
             onSignup={handleRegisterModalSubmit}
-            handleLoginClick={handleLogInClick}
+            onClick={handleLogInClick}
             btnText={isLoading ? 'Saving...' : 'Sign up'}
           />
 
@@ -285,14 +285,14 @@ function App() {
             isOpen={activeModal === 'log-in'}
             onClose={closeActiveModal}
             onLogin={handleSignin}
-            handleSignupClick={handleSignupClick}
+            onClick={handleSignupClick}
             btnText={isLoading ? 'Loggin' : 'Log In'}
           />
 
           <EditProfileModal
             isOpen={activeModal === 'change-data'}
             onClose={closeActiveModal}
-            onSaveChanges={handleUpdateUserInfo}
+            onSave={handleUpdateUserInfo}
           />
 
           <DeleteConfirmModal
@@ -303,11 +303,10 @@ function App() {
           />
 
           <ItemModal
-            activeModal={activeModal}
+            isOpen={activeModal}
             card={selectedGarment}
             onClose={closeActiveModal}
-            handleDeleteCard={handleDeleteCard}
-            openDeleteConfirmModal={openDeleteConfirmModal}
+            onDelete={openDeleteConfirmModal}
           />
         </CurrentTemperatureUnitContext.Provider>
       </CurrentUserContext.Provider>
