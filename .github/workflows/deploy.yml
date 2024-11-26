@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -15,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
@@ -27,17 +28,20 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: ./build
+          path: ./build # Ensure this path matches your actual build output
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
+
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: build-artifact
-          path: ./artifact
+          path: ./artifact # Ensure this matches the expected download path
 
       - name: Deploy
-        run: echo "Deploying..."
+        run: |
+          echo "Deploying the project..."
+          # Add your deployment script here

@@ -16,12 +16,11 @@ function LogInModal({ isOpen, onClose, onLogin, onClick, btnText }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    Promise.resolve(onLogin(values))
-      .then(() => {
-        setValues({ email: '', password: '' });
-        onClose();
-      })
-      .catch(console.error);
+    onLogin(values);
+    setValues({ email: '', password: '' });
+    setTimeout(() => {
+      onClose();
+    }, 1000); // 1 second delay before closing the modal
   };
 
   const isFormValid = values.email && values.password;

@@ -48,7 +48,7 @@ function EditProfileModal({ isOpen, onClose, onSave }) {
         <input
           type='text'
           className='modal__input'
-          id='editprofilename'
+          id='name'
           placeholder='Name'
           name='name'
           value={user.name}

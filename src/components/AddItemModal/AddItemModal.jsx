@@ -21,16 +21,11 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, btnText }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onAddItem(values)
-      .then(() => {
-        clearForm();
-        setTimeout(() => {
-          onClose();
-        }, 1000); // 1 second delay before closing the modal
-      })
-      .catch(error => {
-        console.error('Error adding item:', error);
-      });
+    onAddItem(values);
+    clearForm();
+    setTimeout(() => {
+      onClose();
+    }, 1000); // 1 second delay before closing the modal
   };
 
   const isFormValid = values.name && values.imageUrl && values.weather;

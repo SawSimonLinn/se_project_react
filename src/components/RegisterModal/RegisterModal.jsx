@@ -22,6 +22,7 @@ function RegisterModal({ isOpen, onClose, onSignup, onClick, btnText }) {
       [name]: value,
     }));
   };
+
   const handleSubmit = e => {
     e.preventDefault();
     Promise.resolve(onSignup(values))
