@@ -21,11 +21,7 @@ const AddItemModal = ({ onClose, onAddItem, isOpen, btnText }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onAddItem(values);
-    clearForm();
-    setTimeout(() => {
-      onClose();
-    }, 1000); // 1 second delay before closing the modal
+    onAddItem(values, clearForm);
   };
 
   const isFormValid = values.name && values.imageUrl && values.weather;

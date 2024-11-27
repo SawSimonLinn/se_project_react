@@ -58,6 +58,11 @@ function App() {
   const [activeModal, setActiveModal] = useState('');
 
   // Functions
+  const handleToggleSwitchChange = () => {
+    setCurrentTemperatureUnit(currentTemperatureUnit === 'F' ? 'C' : 'F');
+  };
+
+  // Close Modal functions
   const closeActiveModal = () => {
     setActiveModal('');
   };
@@ -88,61 +93,21 @@ function App() {
     setSelectedGarment(card);
   };
 
-  const handleToggleSwitchChange = () => {
-    setCurrentTemperatureUnit(currentTemperatureUnit === 'F' ? 'C' : 'F');
-  };
-
-  const handleAddItemModalSubmit = values => {
+  // Add item functions
+  const handleAddItemModalSubmit = (values, clearForm) => {
     const token = localStorage.getItem('jwt');
     setIsLoading(true);
     return addItem(values, token)
       .then(item => {
         setClothingItems([item, ...clothingItems]);
+        clearForm(); // Clear the form after successful submission
         closeActiveModal();
       })
       .catch(console.error)
       .finally(() => setIsLoading(false));
   };
 
-  const handleDeleteCard = card => {
-    const token = localStorage.getItem('jwt');
-    const id = card._id;
-
-    return deleteItemById(id, token)
-      .then(() => {
-        setClothingItems(prevItems =>
-          prevItems.filter(item => item._id !== id)
-        );
-        closeActiveModal();
-      })
-      .catch(console.error);
-  };
-
-  const handleCardLike = (itemId, isLiked) => {
-    const token = localStorage.getItem('jwt');
-
-    likeCard(itemId, isLiked, token)
-      .then(updatedItem => {
-        setClothingItems(prevItems =>
-          prevItems.map(item => (item._id === itemId ? updatedItem : item))
-        );
-      })
-      .catch(console.error);
-  };
-
-  const handleUpdateUserInfo = formData => {
-    const token = localStorage.getItem('jwt');
-    updateUser({ avatar: formData.imageUrl, name: formData.name }, token)
-      .then(data => {
-        setCurrentUser(data.data);
-        closeActiveModal();
-      })
-      .catch(err => {
-        console.error(err);
-        alert(`${err}. Failed to update profile`);
-      });
-  };
-
+  // Register functions
   const handleRegisterModalSubmit = ({ name, email, password, avatarUrl }) => {
     const token = localStorage.getItem('jwt');
     setIsLoading(true);
@@ -159,6 +124,49 @@ function App() {
       .finally(() => setIsLoading(false));
   };
 
+  // Delete functions
+  const handleDeleteCard = card => {
+    const token = localStorage.getItem('jwt');
+    const id = card._id;
+
+    return deleteItemById(id, token)
+      .then(() => {
+        setClothingItems(prevItems =>
+          prevItems.filter(item => item._id !== id)
+        );
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
+  // Like functions
+  const handleCardLike = (itemId, isLiked) => {
+    const token = localStorage.getItem('jwt');
+
+    likeCard(itemId, isLiked, token)
+      .then(updatedItem => {
+        setClothingItems(prevItems =>
+          prevItems.map(item => (item._id === itemId ? updatedItem : item))
+        );
+      })
+      .catch(console.error);
+  };
+
+  // Update user info
+  const handleUpdateUserInfo = formData => {
+    const token = localStorage.getItem('jwt');
+    updateUser({ avatar: formData.imageUrl, name: formData.name }, token)
+      .then(data => {
+        setCurrentUser(data.data);
+        closeActiveModal();
+      })
+      .catch(err => {
+        console.error(err);
+        alert(`${err}. Failed to update profile`);
+      });
+  };
+
+  // Sign in functions
   const handleSignin = ({ email, password }) => {
     setIsLoading(true);
     signin(email, password)
@@ -175,6 +183,7 @@ function App() {
       .finally(() => setIsLoading(false));
   };
 
+  // Log out function
   const handleLogOut = () => {
     localStorage.removeItem('jwt');
     navigate('/');

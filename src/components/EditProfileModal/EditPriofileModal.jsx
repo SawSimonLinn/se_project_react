@@ -43,24 +43,24 @@ function EditProfileModal({ isOpen, onClose, onSave }) {
       onSubmit={handleSubmit}
       isSubmitDisabled={!isChanged}
     >
-      <label htmlFor='name' className='modal__label'>
+      <label className='modal__label'>
         Name{''}
         <input
           type='text'
           className='modal__input'
-          id='name'
+          id='profile-name'
           placeholder='Name'
           name='name'
           value={user.name}
           onChange={handleChange}
         />
       </label>
-      <label htmlFor='imageUrl' className='modal__label'>
+      <label className='modal__label'>
         Avatar Url{''}
         <input
           type='text'
           className='modal__input'
-          id='imageUrl'
+          id='profile-imageUrl'
           placeholder='Avatar Url'
           name='imageUrl'
           value={user.imageUrl}

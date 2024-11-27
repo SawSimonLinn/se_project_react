@@ -13,7 +13,7 @@ function RegisterModal({ isOpen, onClose, onSignup, onClick, btnText }) {
     if (isOpen) {
       setFormData({ email: '', password: '', name: '', avatarUrl: '' });
     }
-  }, [isOpen]);
+  }, [isOpen, setFormData]);
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -25,12 +25,7 @@ function RegisterModal({ isOpen, onClose, onSignup, onClick, btnText }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    Promise.resolve(onSignup(values))
-      .then(() => {
-        setFormData({ email: '', password: '', name: '', avatarUrl: '' });
-        onClose();
-      })
-      .catch(console.error);
+    onSignup(values);
   };
 
   const isFormValid =

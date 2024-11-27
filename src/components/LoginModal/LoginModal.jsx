@@ -17,10 +17,6 @@ function LogInModal({ isOpen, onClose, onLogin, onClick, btnText }) {
   const handleSubmit = e => {
     e.preventDefault();
     onLogin(values);
-    setValues({ email: '', password: '' });
-    setTimeout(() => {
-      onClose();
-    }, 1000); // 1 second delay before closing the modal
   };
 
   const isFormValid = values.email && values.password;
