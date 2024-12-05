@@ -11,6 +11,7 @@ export const baseUrl =
     : 'http://localhost:3001';
 
 export const weatherOptions = [
+  // !  Day options start here
   {
     day: true,
     condition: 'clear',
@@ -23,8 +24,23 @@ export const weatherOptions = [
   },
   {
     day: true,
-    condition: 'mist',
+    condition: 'haze',
     url: new URL('../assets/day/fog-day.png', import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: 'mist',
+    url: new URL('../assets/night/fog-night.png', import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: 'fog',
+    url: new URL('../assets/night/fog-night.png', import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: 'haze',
+    url: new URL('../assets/night/fog-night.png', import.meta.url).href,
   },
   {
     day: true,
@@ -41,6 +57,7 @@ export const weatherOptions = [
     condition: 'thunderstorm',
     url: new URL('../assets/day/storm-day.png', import.meta.url).href,
   },
+  // ! Night options start here
   {
     day: false,
     condition: 'clear',
@@ -54,6 +71,16 @@ export const weatherOptions = [
   {
     day: false,
     condition: 'mist',
+    url: new URL('../assets/night/fog-night.png', import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: 'fog',
+    url: new URL('../assets/night/fog-night.png', import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: 'haze',
     url: new URL('../assets/night/fog-night.png', import.meta.url).href,
   },
   {
