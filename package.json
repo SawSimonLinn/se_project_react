@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://wtwrapp.jumpingcrab.com",
   "scripts": {
     "dev": "vite --open",
     "build": "react-scripts build",
