@@ -5,11 +5,6 @@ export const coordinates = {
 
 export const APIkey = '035a112474478a3b64beab9f42f2aa0c';
 
-export const BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'put the URL for your deployed backend here, including https://'
-    : 'http://localhost:3001';
-
 export const baseUrl =
   process.env.NODE_ENV === 'production'
     ? 'https://api.wtwrapp.jumpingcrab.com'

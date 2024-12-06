@@ -1,4 +1,4 @@
-import { BASE_URL } from './constants';
+import { baseUrl } from './constants';
 
 export const checkResponse = res => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -14,11 +14,11 @@ export const getHeaders = token => {
 
 // ? Path: se_project_react/src/utils/api.js
 export const getItems = () => {
-  return fetch(`${BASE_URL}/items`).then(checkResponse);
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 };
 
 export const getCurrentUser = token => {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     headers: {
       ...getHeaders(token),
     },
@@ -26,7 +26,7 @@ export const getCurrentUser = token => {
 };
 
 export const deleteItemById = (id, token) => {
-  return fetch(`${BASE_URL}/items/${id}`, {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ export const deleteItemById = (id, token) => {
 };
 
 export const addItem = ({ name, weather, imageUrl }, token) => {
-  return fetch(`${BASE_URL}/items`, {
+  return fetch(`${baseUrl}/items`, {
     method: 'POST',
     headers: {
       ...getHeaders(token),
@@ -45,7 +45,7 @@ export const addItem = ({ name, weather, imageUrl }, token) => {
 };
 
 export const updateUser = (FormData, token) => {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: 'PATCH',
     headers: {
       ...getHeaders(token),
@@ -56,7 +56,7 @@ export const updateUser = (FormData, token) => {
 
 export const likeCard = (itemId, isLiked, token) => {
   const method = isLiked ? 'DELETE' : 'PUT';
-  return fetch(`${BASE_URL}/items/${itemId}/likes`, {
+  return fetch(`${baseUrl}/items/${itemId}/likes`, {
     method: method,
     headers: {
       ...getHeaders(token),
