@@ -6,7 +6,7 @@
   "homepage": "https://wtwrapp.jumpingcrab.com",
   "scripts": {
     "dev": "vite --open",
-    "build": "react-scripts build",
+    "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
