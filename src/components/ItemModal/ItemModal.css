@@ -85,7 +85,7 @@
   }
 
   .modal__footer {
-    margin-top: 320px;
-    gap: 30px;
+    /* margin-top: 320px; */
+    gap: 20px;
   }
 }
