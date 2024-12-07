@@ -44,6 +44,7 @@
 
   border: none;
   background: transparent;
+  background-repeat: no-repeat;
 }
 
 .card__like-button {
