@@ -135,18 +135,23 @@
 
     position: absolute;
     top: 18px;
-    right: 16px;
+    right: 18px;
+    left: auto;
 
-    max-width: 343px;
+    width: 343px;
 
-    padding: 60px 67px;
+    padding: 60px 0;
     background: #ffffff;
     align-items: center;
     z-index: 1;
   }
 
+  .header__registration-button {
+    margin-top: 20px;
+  }
+
   .header__add-clothes-button {
-    margin: 24px 0 24px 0;
+    margin: 24px 0 0 0;
     background: transparent;
   }
 

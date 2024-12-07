@@ -72,6 +72,11 @@
     max-width: 343px;
     max-height: 463px;
     padding: 40px 20px;
+    bottom: auto;
+  }
+
+  .modal__img {
+    height: 343px;
   }
 
   .modal__close-btn {
@@ -81,6 +86,6 @@
 
   .modal__footer {
     margin-top: 320px;
-    gap: 160px;
+    gap: 60px;
   }
 }

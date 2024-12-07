@@ -20,7 +20,7 @@
 
 .delete-modal__content {
   width: 670px;
-  height: 280px;
+  max-height: 280px;
   border-radius: 20px;
   background: #ffffff;
 
@@ -70,5 +70,28 @@
   color: #ff4d00;
 }
 
-.delete-modal__cancle-btn {
+@media screen and (max-width: 580px) {
+  .delete-modal__content {
+    max-width: 343px;
+    padding: 40px 20px;
+    bottom: auto;
+  }
+
+  .modal__img {
+    height: 343px;
+  }
+
+  .modal__close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .delete-modal__cancle-btn {
+    margin: 24px 0 0 0;
+  }
+
+  .modal__footer {
+    margin-top: 320px;
+    gap: 60px;
+  }
 }

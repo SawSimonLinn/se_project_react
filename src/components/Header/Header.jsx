@@ -90,44 +90,78 @@ const Header = ({
       </div>
 
       {isOpen && (
-        <div className='header__menu'>
-          <button
-            type='button'
-            onClick={() => {
-              toggleMenu();
-            }}
-            className='modal__close-btn'
-          >
-            <img src={closeIcon} alt='Close' draggable='false' />
-          </button>
-          <ToggleSwitch />
-          <button
-            onClick={() => {
-              handleAddClick();
-              toggleMenu();
-            }}
-            type='button'
-            className='header__add-clothes-button'
-          >
-            + Add clothes
-          </button>
-          <Link
-            to='/profile'
-            className='header__link'
-            onClick={() => {
-              toggleMenu();
-            }}
-          >
-            <div className='header__user-info'>
-              <p className='header__username'>{currentUser.name}</p>
-              <img
-                className='header__user-avatar'
-                src={currentUser.avatar}
-                alt='avatar'
-              />
+        <>
+          {isLoggedIn ? (
+            <div className='header__menu'>
+              <ToggleSwitch />
+              <button
+                type='button'
+                onClick={() => {
+                  toggleMenu();
+                }}
+                className='modal__close-btn'
+              >
+                <img src={closeIcon} alt='Close' draggable='false' />
+              </button>
+
+              <button
+                onClick={() => {
+                  handleAddClick();
+                  toggleMenu();
+                }}
+                type='button'
+                className='header__add-clothes-button'
+              >
+                + Add clothes
+              </button>
+              <Link
+                to='/profile'
+                className='header__link'
+                onClick={() => {
+                  toggleMenu();
+                }}
+              >
+                <div className='header__user-info'>
+                  <p className='header__username'>{currentUser.name}</p>
+                  <img
+                    className='header__user-avatar'
+                    src={currentUser.avatar}
+                    alt='avatar'
+                  />
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
+          ) : (
+            <>
+              <div className='header__menu'>
+                <button
+                  type='button'
+                  onClick={() => {
+                    toggleMenu();
+                  }}
+                  className='modal__close-btn'
+                >
+                  <img src={closeIcon} alt='Close' draggable='false' />
+                </button>
+
+                <button
+                  type='button'
+                  className='header__registration-button'
+                  onClick={handleSignupClick}
+                >
+                  Sign up
+                </button>
+                <button
+                  type='button'
+                  className='header__registration-button'
+                  onClick={handleLoginClick}
+                >
+                  Log In
+                </button>
+              </div>
+            </>
+          )}
+        </>
       )}
     </header>
   );
