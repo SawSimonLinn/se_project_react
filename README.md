@@ -56,8 +56,3 @@ This application is built using **React** for the front end and leverages modern
 4. Start the development server:
    ``` bash
    npm run dev
-
-
-
-
-
