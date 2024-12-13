@@ -30,7 +30,7 @@ This application is built using **React** for the front end and leverages modern
 
 - [React Repository](https://github.com/SawSimonLinn/se_project_react)
 - [Express Repository](https://github.com/SawSimonLinn/se_project_express)
-- [Deployed Website](https://www.wtwrapp.jumpingcrab.com/) (Add this link once the app is deployed)
+- [Deployed Website](https://www.wtwrapp.jumpingcrab.com/) 
 
 ---
 
