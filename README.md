@@ -1,58 +1,48 @@
 # WTWR (What to Wear)
 
-WTWR is a weather-driven web application that suggests personalized clothing options based on real-time weather data. It allows users to manage their wardrobe and make informed clothing decisions effortlessly.
+A React-based web application that provides personalized clothing suggestions based on real-time weather data. Users can manage their wardrobe and receive recommendations tailored to their local weather conditions.
 
-## 📝 Project Overview
+![WTWR Screenshot](https://example.com/screenshot.png)
 
-This application is built using **React** for the front end and leverages modern features like hooks and the Context API to deliver a dynamic and responsive user experience. Future iterations will integrate a backend server for robust data management and user authentication.
+## Description
 
-### Key Features
+WTWR enables users to:
 
-- 🌦 **Weather Integration**: Fetches real-time weather data using the OpenWeatherMap API for accurate clothing suggestions.
-- 🔒 **User Authentication**: Secure login and registration functionalities (to be implemented).
-- 👗 **Personalized Wardrobe**: Users can add, update, and delete clothing items, tailoring the wardrobe to their preferences.
-- 🎯 **React Features**: Utilizes `useState`, `useEffect`, and `useContext` for state and context management.
-- 📱 **Responsive Design**: Optimized for seamless use across various devices and screen sizes.
+- Receive clothing suggestions based on current weather.
+- Add, edit, and delete clothing items in their virtual wardrobe.
+- View detailed weather information for their location.
 
-## 🚀 Technologies Used
+## Features
 
-### Tech Stack:
-- **Front-end:** React, React Router
-- **Back-end:** Node.js, Express
-- **Database:** MongoDB
-- **Authentication:** JWT (JSON Web Token) for secure user authentication
-- **Cloud Services:** GCP (Google Cloud Platform) for deployment and scalability
-- **Tools:** Vite for development, JSON Server for mock API, OpenWeatherMap API for weather data
+- **Weather-Based Recommendations:** Get outfit suggestions that match the day's weather.
+- **Wardrobe Management:** Easily manage your clothing items within the app.
+- **Responsive Design:** Enjoy a seamless experience across all devices.
 
----
+![Wardrobe Management GIF](https://example.com/wardrobe-management.gif)
 
-## 🔗 Project Links
+## Live Demo
 
-- [React Repository](https://github.com/SawSimonLinn/se_project_react)
-- [Express Repository](https://github.com/SawSimonLinn/se_project_express)
-- [Deployed Website](https://www.wtwrapp.jumpingcrab.com/) 
+Experience the live version of the project here: [WTWR Live Demo](https://wtwrapp.jumpingcrab.com/)
 
----
+## Demo Video
 
-## ⚡️ Getting Started
+For a comprehensive walkthrough of the application's features, watch the demo video:
 
-### Prerequisites
-- Node.js
-- npm or yarn
+[![WTWR Demo Video](https://example.com/demo-thumbnail.png)](https://example.com/demo-video.mp4)
 
-### Installation
-1. Clone the repository:
+## Deployment and System Requirements
+
+To run this project locally, ensure you have the following:
+
+- **Node.js:** Version 14.x or higher
+- **npm:** Version 6.x or higher
+- **React:** Version 17.x or higher
+- **Vite:** Version 2.x or higher
+
+**Deployment Instructions:**
+
+1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/SawSimonLinn/se_project_react.git
-
-2. Navigate to the project directory:
-   ```bash
    cd se_project_react
-
-3. Install dependencies:
-   ```bash
-   npm install
-   
-4. Start the development server:
-   ``` bash
-   npm run dev
