@@ -47,3 +47,31 @@ To run this project locally, ensure you have the following:
    git clone https://github.com/SawSimonLinn/se_project_react.git
    cd se_project_react
    ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+
+   ```bash
+   npm run build
+   ```
+
+5. Deploy the production build:
+
+   The production-ready files will be in the `dist` folder. You can deploy these files to your preferred hosting service.
+
+### Future Improvements
+
+- Enhance Recommendation Algorithm: Improve the clothing suggestion algorithm using machine learning to provide more personalized recommendations.
+- User Authentication: Implement OAuth2.0 for secure and seamless user login experiences.
+- Social Sharing: Allow users to share their outfits and weather updates on social media platforms.
