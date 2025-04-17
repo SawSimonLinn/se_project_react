@@ -25,7 +25,6 @@ WTWR enables users to:
 Experience the live version of the project here: [WTWR Live Demo](https://wtwrapp.jumpingcrab.com/)
 
 ## Backend Repository
-
 [WTWR Backend Repo](https://github.com/SawSimonLinn/se_project_express)
 
 ## Demo Video
