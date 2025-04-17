@@ -25,7 +25,18 @@ WTWR enables users to:
 Experience the live version of the project here: [WTWR Live Demo](https://wtwrapp.jumpingcrab.com/)
 
 ## Backend Repository
-[WTWR Backend Repo](https://github.com/SawSimonLinn/se_project_express)
+
+This project uses a separate backend built with **Node.js**, **Express.js**, and **MongoDB**. I also used **Postman** to test APIs and **JWT** for authentication.  
+ [WTWR Backend Repo](https://github.com/SawSimonLinn/se_project_express)
+
+Features include:
+
+-  **RESTful API** structure using Express  
+-  **MongoDB** for database and data models  
+-  **Postman** for endpoint testing  
+-  **JWT Authentication** for secure login  
+-  Clear separation of controllers, routes, and middlewares  
+-  Deployed for smooth integration with the frontend
 
 ## Demo Video
 
