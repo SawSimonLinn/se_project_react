@@ -26,8 +26,7 @@ Experience the live version of the project here: [WTWR Live Demo](https://wtwrap
 
 ## Backend Repository
 
-This project uses a separate backend built with **Node.js**, **Express.js**, and **MongoDB**. I also used **Postman** to test APIs and **JWT** for authentication.  
- [WTWR Backend Repo](https://github.com/SawSimonLinn/se_project_express)
+This project uses a separate backend built with **Node.js**, **Express.js**, and **MongoDB**. I also used **Postman** to test APIs and **JWT** for authentication. [WTWR Backend Repo](https://github.com/SawSimonLinn/se_project_express)
 
 Features include:
 
